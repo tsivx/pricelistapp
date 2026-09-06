@@ -178,13 +178,6 @@ function formatPrice(n: number | null | undefined): string {
 <template>
   <div class="min-h-dvh bg-zinc-50 text-zinc-900">
     <div class="mx-auto max-w-[1100px] px-3 sm:px-4 py-4 sm:py-6">
-      <header class="mb-4">
-        <h1 class="text-[22px] sm:text-2xl font-bold tracking-tight">Pricelist</h1>
-        <p class="mt-1 text-sm leading-5 text-zinc-500">
-          Вставь сырой прайс и условия наценки — получи готовый текст по категориям. Всё через Gemini, без бэкенда. Товары могут быть любыми.
-        </p>
-      </header>
-
       <div class="rounded-2xl border border-zinc-200 bg-white shadow-sm mb-4 overflow-hidden">
         <button type="button" class="flex w-full items-center justify-between px-4 py-3 text-left" @click="settingsOpen = !settingsOpen">
           <span class="text-sm font-semibold">Настройки Gemini</span>
@@ -201,7 +194,6 @@ function formatPrice(n: number | null | undefined): string {
                 autocomplete="off"
                 class="w-full rounded-xl border border-zinc-200 bg-white px-3 py-2.5 text-sm outline-none focus:border-zinc-300 focus:ring-2 focus:ring-zinc-100"
               />
-              <span class="text-[11px] text-zinc-500">Хранится в localStorage.</span>
             </label>
             <label class="flex flex-col gap-1.5">
               <span class="text-xs font-semibold">Модель</span>
@@ -211,7 +203,6 @@ function formatPrice(n: number | null | undefined): string {
                 placeholder="gemini-3.5-flash-lite"
                 class="w-full rounded-xl border border-zinc-200 bg-white px-3 py-2.5 text-sm outline-none focus:border-zinc-300 focus:ring-2 focus:ring-zinc-100"
               />
-              <span class="text-[11px] text-zinc-500">По умолчанию как в <code class="rounded bg-zinc-100 px-1 py-0.5">main.py</code>.</span>
             </label>
           </div>
           <div class="mt-3 flex items-center gap-3">
@@ -265,7 +256,6 @@ function formatPrice(n: number | null | undefined): string {
               <option value="500">до 500</option>
               <option value="1000">до 1000</option>
             </select>
-            <span class="text-[11px] text-zinc-500">В пользу магазина (ceil).</span>
           </label>
           <div class="flex gap-2 sm:ml-auto">
             <button type="button" class="flex-1 sm:flex-none inline-flex items-center justify-center rounded-xl bg-zinc-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-zinc-800 disabled:opacity-50" :disabled="loading" @click="onRun">
@@ -372,7 +362,7 @@ function formatPrice(n: number | null | undefined): string {
       </div>
 
       <footer class="mt-4 px-1 text-[11px] leading-4 text-zinc-400">
-        System instruction — из переданной инструкции; attrs — динамический массив; наценки/округление считает Gemini.
+        made by @tsivx
       </footer>
     </div>
   </div>
